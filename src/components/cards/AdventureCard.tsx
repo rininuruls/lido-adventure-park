@@ -20,8 +20,8 @@ export default function AdventureCard({
         className="h-64 w-full object-cover"
       />
 
-      <div className="p-6">
-        <h2 className="text-3xl font-bold text-green-900">
+      <div className="p-5 md:p-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-green-900">
           {title}
         </h2>
 

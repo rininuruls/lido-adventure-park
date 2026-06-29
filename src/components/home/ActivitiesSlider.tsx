@@ -34,7 +34,7 @@ export default function ActivitiesSlider() {
   return (
     <section
       id="activities"
-      className="bg-gradient-to-br from-white via-green-50 to-lime-100"
+      className="relative py-20 md:py-32 bg-gradient-to-br from-white via-green-50 to-lime-100"
     >
       {/* BACKGROUND */}
       <div className="absolute inset-0">
@@ -48,16 +48,18 @@ export default function ActivitiesSlider() {
       {/* GREEN OVERLAY */}
       <div className="absolute inset-0 bg-green-900/40" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <p className="mb-3 text-sm uppercase tracking-[6px] text-lime-400">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p className="mb-3 text-sm uppercase tracking-[3px] md:tracking-[6px] text-lime-400">
           Wahana
         </p>
 
-        <h2 className="mb-14 text-4xl md:text-6xl font-black text-white">
+        <h2 className="mb-14 text-3xl
+sm:text-4xl
+lg:text-6xl font-black text-white">
           Adventure Activities
         </h2>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6">
           {activities.map((item, index) => (
             <motion.div
               key={index}
@@ -66,7 +68,9 @@ export default function ActivitiesSlider() {
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md"
             >
               {/* IMAGE */}
-              <div className="relative h-[500px] overflow-hidden">
+              <div className="relative h-[350px]
+md:h-[450px]
+lg:h-[500px] overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -87,7 +91,9 @@ export default function ActivitiesSlider() {
                   {item.desc}
                 </p>
 
-                <button className="mt-5 rounded-full bg-lime-400 px-5 py-2 font-bold text-black transition hover:scale-105 hover:shadow-[0_0_30px_rgba(163,230,53,0.8)]">
+                <button className="mt-5 rounded-full bg-lime-400 px-4
+py-2
+md:px-5 font-bold text-black transition hover:scale-105 hover:shadow-[0_0_30px_rgba(163,230,53,0.8)]">
                   Explore
                 </button>
               </div>

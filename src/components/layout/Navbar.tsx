@@ -1,7 +1,21 @@
 "use client";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth >= 768) {
+      setIsOpen(false);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
   return (
+    
    <header
   className="
        fixed
@@ -19,8 +33,7 @@ export default function Navbar() {
 
   "
 >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3 md:py-5">
         {/* LOGO */}
         <a
           href="#home"
@@ -31,27 +44,31 @@ export default function Navbar() {
             src="https://lidoadventurepark.com/Images/Logo/logo_lap.png"
             alt="Lido Adventure Park"
             className="
-              w-8
-              md:w-10
-              object-contain
-              drop-shadow-[0_0_20px_rgba(34,197,94,0.5)]
-            "
+  w-10
+  sm:w-12
+  md:w-14
+  lg:w-16
+  object-contain
+  drop-shadow-[0_0_20px_rgba(34,197,94,0.5)]
+"
+            
           />
 
-          {/* LOGO TEXT */}
+{/* LOGO TEXT */}
 <div className="leading-none">
-  <h1 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white">
+  <h1 className="text-base sm:text-lg md:text-3xl font-black uppercase tracking-tight text-white">
     Lido
   </h1>
 
-  <p className="text-[10px] md:text-sm font-medium uppercase tracking-[6px] md:tracking-[9px] text-green-400">
+  <p className="text-[7px] sm:text-[8px] md:text-sm font-medium uppercase tracking-[2px] sm:tracking-[4px] md:tracking-[9px] text-green-400">
     Adventure Park
   </p>
 </div>
         </a>
 
         {/* MENU */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5
+lg:gap-8 md:flex">
           <a
             href="#home"
             className="text-sm font-medium text-white/80 transition-all duration-300 hover:text-green-400"
@@ -108,31 +125,132 @@ export default function Navbar() {
   ☰
 </button>
 
-        {/* BUTTON */}
-        <a
-          href="https://wa.me/6285723842743?text=Halo%20saya%20ingin%20reservasi%20di%20Lido%20Adventure%20Park"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            rounded-full
-            bg-gradient-to-r
-            from-green-500
-            to-lime-400
-            px-
-            py-3
-            text-sm
-            font-semibold
-            text-white
-            shadow-[0_0_20px_rgba(34,197,94,0.5)]
-            transition-all
-            duration-300
-            hover:scale-105
-            hover:shadow-[0_0_40px_rgba(34,197,94,0.9)]
-          "
-        >
-          Book Now
-        </a>
+       {/* BUTTON */}
+<a
+  href="https://wa.me/6285723842743?text=Halo%20saya%20ingin%20reservasi%20di%20Lido%20Adventure%20Park"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    hidden
+    sm:inline-flex
+    items-center
+    justify-center
+    rounded-full
+    bg-gradient-to-r
+    from-green-500
+    to-lime-400
+    px-4
+    py-2
+    md:px-6
+    md:py-3
+    text-xs
+    md:text-sm
+    font-semibold
+    text-white
+    shadow-[0_0_20px_rgba(34,197,94,0.5)]
+    transition-all
+    duration-300
+    hover:scale-105
+    hover:shadow-[0_0_40px_rgba(34,197,94,0.9)]
+  "
+>
+  Book Now
+</a>
+{/* MOBILE MENU */}
+{isOpen && (
+  <div
+    className="
+      md:hidden
+      bg-[#173F2A]
+      border-t
+      border-white/10
+      shadow-lg
+      animate-in
+      slide-in-from-top
+      duration-300
+    "
+  >
+    <nav className="flex flex-col py-4">
 
+      <a
+        href="#home"
+        onClick={() => setIsOpen(false)}
+        className="px-6 py-3 text-white hover:bg-green-700 transition"
+      >
+        Home
+      </a>
+
+      <a
+        href="#about"
+        onClick={() => setIsOpen(false)}
+        className="px-6 py-3 text-white hover:bg-green-700 transition"
+      >
+        About
+      </a>
+
+      <a
+        href="#activities"
+        onClick={() => setIsOpen(false)}
+        className="px-6 py-3 text-white hover:bg-green-700 transition"
+      >
+        Activities
+      </a>
+
+      <a
+        href="#outbound"
+        onClick={() => setIsOpen(false)}
+        className="px-6 py-3 text-white hover:bg-green-700 transition"
+      >
+        Outbound
+      </a>
+
+      <a
+        href="#zona"
+        onClick={() => setIsOpen(false)}
+        className="px-6 py-3 text-white hover:bg-green-700 transition"
+      >
+        Zona
+      </a>
+
+      <a
+        href="#gallery"
+        onClick={() => setIsOpen(false)}
+        className="px-6 py-3 text-white hover:bg-green-700 transition"
+      >
+        Gallery
+      </a>
+
+      <a
+        href="#contact"
+        onClick={() => setIsOpen(false)}
+        className="px-6 py-3 text-white hover:bg-green-700 transition"
+      >
+        Contact
+      </a>
+
+      <a
+        href="https://wa.me/6285723842743?text=Halo%20saya%20ingin%20reservasi%20di%20Lido%20Adventure%20Park"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          mx-6
+          mt-4
+          rounded-full
+          bg-gradient-to-r
+          from-green-500
+          to-lime-400
+          py-3
+          text-center
+          font-semibold
+          text-white
+        "
+      >
+        Book Now
+      </a>
+
+    </nav>
+  </div>
+)}
       </div>
     </header>
   );

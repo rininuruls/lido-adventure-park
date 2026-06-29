@@ -4,24 +4,24 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-32 bg-white"
+      className="py-20 md:py-32 bg-white"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* LEFT */}
           <div>
 
-            <span className="uppercase tracking-[8px] text-lime-500 text-sm font-semibold">
+            <span className="uppercase ttracking-[4px] md:tracking-[8px] text-lime-500 text-sm font-semibold">
               Welcome To
             </span>
 
-            <h2 className="mt-4 text-6xl font-black text-green-950 leading-tight">
+            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-6xl font-black text-green-950 leading-tight">
               Lido Adventure Park
             </h2>
 
-            <p className="mt-8 text-lg leading-8 text-green-700">
+            <p className="mt-8 text-sm sm:text-base lg:text-lg leading-7 lg:leading-8 text-green-700">
               Lido Adventure Park merupakan destinasi wisata petualangan
               yang berada di kawasan Danau Lido, Bogor. Dikelilingi oleh
               panorama Gunung Salak dan alam yang asri, kawasan ini
@@ -30,7 +30,7 @@ export default function About() {
               pengunjung.
             </p>
 
-            <p className="mt-6 text-lg leading-8 text-green-700">
+            <p className="mt-6 text-sm sm:text-base lg:text-lg leading-7 lg:leading-8 text-green-700">
               Mulai dari Flying Fox, High Rope, ATV, Paintball, Archery,
               Kayak hingga berbagai program Team Building dan Outbound,
               Lido Adventure Park menjadi pilihan ideal untuk keluarga,
@@ -66,7 +66,7 @@ export default function About() {
             </div>
 
             <div className="bg-white rounded-[32px] p-8 shadow-xl border border-green-100 hover:-translate-y-2 transition-all duration-300">
-              <div className="text-5xl mb-4">🌿</div>
+              <div className="text text-4xl md:text-5xl mb-4">🌿</div>
               <h3 className="text-2xl font-black text-green-950">
                 Nature Experience
               </h3>
@@ -76,8 +76,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-white rounded-[32px] p-8 shadow-xl border border-green-100 hover:-translate-y-2 transition-all duration-300">
-              <div className="text-5xl mb-4">👨‍👩‍👧‍👦</div>
+            <div className="bg-white rounded-[32px] p-6 md:p-8 shadow-xl border border-green-100 hover:-translate-y-2 transition-all duration-300">
+              <div className="text-4xl md:text-4xl md:text-5xl mb-4">👨‍👩‍👧‍👦</div>
               <h3 className="text-2xl font-black text-green-950">
                 Family Destination
               </h3>
@@ -92,7 +92,7 @@ export default function About() {
         </div>
 
         {/* STAYCATION EXPERIENCE */}
-        <div className="mt-24 relative overflow-hidden rounded-[40px]">
+        <div className="mt-16 md:mt-24 relative overflow-hidden rounded-[40px]">
 
           <img
             src="images/staycation.jpg"
@@ -102,13 +102,13 @@ export default function About() {
 
           <div className="absolute inset-0 bg-black/60" />
 
-          <div className="relative z-10 px-10 py-20 lg:px-20">
+          <div className="relative z-10 px-6 py-12 md:px-10 md:py-20 lg:px-20 lg:px-20">
 
             <span className="uppercase tracking-[8px] text-lime-400 text-sm font-semibold">
               Integrated Experience
             </span>
 
-            <h3 className="mt-4 text-5xl lg:text-6xl font-black text-white leading-tight">
+            <h3 className="mt-4 text-5xl lg:text px-6 py-12 md:px-10 md:py-20 lg:px-20 font-black text-white leading-tight">
               Staycation &
               <br />
               Adventure Experience
@@ -146,8 +146,10 @@ export default function About() {
                 items-center
                 rounded-full
                 bg-lime-400
-                px-8
-                py-4
+                px-5 py-3 
+                md:px-8
+                md:py-4
+                
                 font-bold
                 text-black
                 transition-all

@@ -81,21 +81,26 @@ const facilities = [
 
 return ( <section
    id="zona"
-   className="py-32 bg-gradient-to-br from-[#F8FCF6] via-[#EEF7EC] to-[#E6F4DD]"
+   className="py-20 md:py-32 bg-gradient-to-br from-[#F8FCF6] via-[#EEF7EC] to-[#E6F4DD]"
  > <div className="max-w-7xl mx-auto px-6">
 
 ```
     {/* HEADING */}
     <div className="text-center mb-16">
-      <span className="uppercase tracking-[8px] text-lime-500 text-sm font-semibold">
+      <span className="uppercase tracking-[4px] md:tracking-[8px] text-lime-500 text-sm font-semibold">
         Explore
       </span>
 
-      <h2 className="mt-4 text-6xl font-black text-green-950">
+      <h2 className="mt-4 text-3xl
+sm:text-4xl
+lg:text-6xl font-black text-green-950">
         Adventure Zona
       </h2>
 
-      <p className="mt-5 text-xl text-green-700 max-w-4xl mx-auto">
+      <p className="mt-5 text-sm
+sm:text-base
+lg:text-xl
+leading-7 text-green-700 max-w-4xl mx-auto">
         Lido Adventure Park terdiri dari beberapa pulau atau zona adventure,
         yakni Pulau Khayangan seluas 1.836 meter persegi, Pulau Bidadari
         seluas 1.064 meter persegi, Pulau Biola seluas 5.681 meter persegi,
@@ -106,7 +111,10 @@ return ( <section
       </p>
     </div>
 
-    <div className="grid lg:grid-cols-2 gap-12">
+    <div className="text-sm
+sm:text-base
+lg:text-xl
+leading-7">
 
       {/* MAP */}
       <div
@@ -143,7 +151,8 @@ return ( <section
             className="
               bg-white
               rounded-[28px]
-              p-7
+              p-5
+md:p-7
               border
               border-green-100
               shadow-lg
@@ -152,11 +161,13 @@ return ( <section
               transition-all
             "
           >
-            <div className="text-5xl mb-4">
+            <div className="text-4xl
+md:text-5xl mb-4">
               {zone.icon}
             </div>
 
-            <h3 className="text-2xl font-black text-green-950">
+            <h3 className="text-xl
+md:text-2xl font-black text-green-950">
               {zone.title}
             </h3>
 
@@ -169,7 +180,9 @@ return ( <section
 
     </div>
 
-    {<div className="grid md:grid-cols-4 gap-6 mt-20">
+    {<div className="grid
+grid-cols-2
+md:grid-cols-4 gap-6 mt-20">
   {facilities.map((facility, index) => (
     <button
       key={index}
@@ -198,7 +211,8 @@ return ( <section
     <div className="grid md:grid-cols-4 gap-6 mt-20">
 
       <div className="bg-white rounded-3xl p-6 text-center shadow-lg">
-        <h3 className="text-4xl font-black text-lime-500">4</h3>
+        <h3 className="text-3xl
+md:text-4xl font-black text-lime-500">4</h3>
         <p className="mt-2 text-green-800">Adventure Zones</p>
       </div>
 
@@ -259,6 +273,8 @@ return ( <section
             rounded-3xl
             shadow-2xl
             max-h-[90vh]
+            text-sm
+md:text-base
             object-contain
           "
         />
@@ -295,11 +311,14 @@ return ( <section
       <img
         src={selectedFacility.image}
         alt={selectedFacility.title}
-        className="w-full h-[400px] object-cover"
+        className="w-full h-[h-56
+md:h-[400px] object-cover"
       />
 
-      <div className="p-8">
-        <h3 className="text-4xl font-black text-green-950">
+      <div className="p-5
+md:p-8">
+        <h3 className="text-2xl
+md:text-4xl font-black text-green-950">
           {selectedFacility.title}
         </h3>
 

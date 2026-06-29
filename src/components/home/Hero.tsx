@@ -25,12 +25,14 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/45" />
 
       {/* CONTENT */}
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-4
+sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="max-w-5xl text-center text-white"
+          className="max-w-5xl
+mx-auto text-center text-white"
         >
           <p className="mb-4 uppercase tracking-[8px] text-lime-300">
             
@@ -38,8 +40,10 @@ export default function Hero() {
 
           <h1
   className="
-    text-4xl
-    md:text-6xl
+text-3xl
+sm:text-4xl
+md:text-5xl
+lg:text-6xl
     font-Montserrat
     tracking-tight
     text-white
@@ -51,10 +55,10 @@ export default function Hero() {
 
           <p
   className="
-    mt-6
-    text-lime-300
-    text-xl
-    md:text-2xl
+   text-base
+sm:text-lg
+md:text-xl
+lg:text-2xl
     font-Montserrat
     tracking-[4px]
     drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)]
@@ -71,7 +75,8 @@ export default function Hero() {
             
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex fflex-col
+sm:flex-row justify-center gap-4">
             <a
               href="#activities"
               className="
